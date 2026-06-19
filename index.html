@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>S&M Service NRW – Professionelle Reinigung in Düsseldorf</title>
+<meta name="description" content="S&M Service NRW – Ihr zuverlässiges Reinigungsunternehmen in Düsseldorf. Büroreinigung, Wohnungsreinigung, Grundreinigung und mehr. Jetzt kostenlos anfragen!">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --white:   #FFFFFF;
+    --snow:    #F8F9FB;
+    --slate:   #EEF4FB;
+    --ink:     #1A1D23;
+    --mid:     #5A6070;
+    --accent:  #2B7FD4;
+    --accent2: #1A5FAA;
+    --orange:  #E8922A;
+    --orange2: #C97820;
+    --green:   #2DBE8C;
+    --border:  #DDEAF7;
+    --radius:  12px;
+    --shadow:  0 4px 24px rgba(26,29,35,0.08);
+    --shadow-md: 0 8px 40px rgba(26,29,35,0.12);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    color: var(--ink);
+    background: var(--white);
+    line-height: 1.65;
+    font-size: 16px;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 68px;
+  }
+  .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+  }
+  .logo span { color: var(--accent); }
+  nav ul { list-style: none; display: flex; gap: 2rem; }
+  nav ul a {
+    text-decoration: none; color: var(--mid);
+    font-size: 0.875rem; font-weight: 500;
+    transition: color .2s;
+  }
+  nav ul a:hover { color: var(--accent); }
+  .nav-cta {
+    background: var(--accent); color: var(--white) !important;
+    padding: 0.5rem 1.25rem; border-radius: 8px;
+    font-weight: 600 !important;
+    transition: background .2s !important;
+  }
+  .nav-cta:hover { background: var(--accent2) !important; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 88vh;
+    background: linear-gradient(135deg, #0D2A4E 0%, #1A5FAA 55%, #2B7FD4 100%);
+    display: flex; align-items: center;
+    padding: 5% 5%;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  .hero-content { max-width: 640px; position: relative; z-index: 1; }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #fff; font-size: 0.8rem; font-weight: 500;
+    padding: 0.35rem 0.85rem; border-radius: 100px;
+    margin-bottom: 1.5rem; letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .hero-badge::before { content: '✦'; color: var(--green); }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 5vw, 3.6rem);
+    color: #fff;
+    line-height: 1.18;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.25rem;
+  }
+  .hero h1 em { font-style: normal; color: #7EC8F8; }
+  .hero p {
+    color: rgba(255,255,255,0.78);
+    font-size: 1.1rem;
+    max-width: 480px;
+    margin-bottom: 2.25rem;
+    line-height: 1.7;
+  }
+  .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--white); color: var(--accent2);
+    font-weight: 700; font-size: 0.95rem;
+    padding: 0.85rem 2rem; border-radius: var(--radius);
+    text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;
+    transition: transform .2s, box-shadow .2s;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,0.25); }
+  .btn-whatsapp {
+    background: #25D366; color: #fff;
+    font-weight: 600; font-size: 0.95rem;
+    padding: 0.85rem 1.75rem; border-radius: var(--radius);
+    text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;
+    transition: transform .2s, background .2s;
+  }
+  .btn-whatsapp:hover { background: #1ebe5a; transform: translateY(-2px); }
+  .hero-stats {
+    display: flex; gap: 2.5rem; margin-top: 3rem;
+    flex-wrap: wrap;
+  }
+  .stat { color: #fff; }
+  .stat strong { display: block; font-size: 1.75rem; font-weight: 700; letter-spacing: -0.02em; }
+  .stat small { color: rgba(255,255,255,0.6); font-size: 0.8rem; }
+
+  /* ── TRUST BAR ── */
+  .trustbar {
+    background: var(--ink);
+    padding: 1.1rem 5%;
+    display: flex; align-items: center; justify-content: center;
+    gap: 2.5rem; flex-wrap: wrap;
+  }
+  .trust-item {
+    display: flex; align-items: center; gap: 0.5rem;
+    color: rgba(255,255,255,0.75); font-size: 0.82rem; font-weight: 500;
+  }
+  .trust-item .icon { font-size: 1rem; }
+
+  /* ── SECTIONS ── */
+  section { padding: 6rem 5%; }
+  .section-label {
+    display: inline-block;
+    color: var(--accent); font-size: 0.75rem; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    margin-bottom: 0.75rem;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+    color: var(--ink); letter-spacing: -0.02em;
+    line-height: 1.25; margin-bottom: 1rem;
+  }
+  .section-sub {
+    color: var(--mid); font-size: 1.05rem;
+    max-width: 520px; line-height: 1.7;
+  }
+  .section-head { margin-bottom: 3.5rem; }
+
+  /* ── SERVICES GRID ── */
+  .services { background: var(--snow); }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  .service-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 2rem;
+    transition: box-shadow .25s, transform .25s;
+    cursor: default;
+  }
+  .service-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-4px);
+  }
+  .service-icon {
+    width: 52px; height: 52px;
+    background: linear-gradient(135deg, #EEF4FF, #D6E8FF);
+    border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem; margin-bottom: 1.25rem;
+  }
+  .service-card h3 {
+    font-size: 1.05rem; font-weight: 700;
+    margin-bottom: 0.5rem; color: var(--ink);
+  }
+  .service-card p { color: var(--mid); font-size: 0.875rem; line-height: 1.6; }
+
+  /* ── WHY US ── */
+  .why { background: var(--white); }
+  .why-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 1rem; max-width: 860px;
+  }
+  .why-item {
+    background: var(--snow);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.75rem;
+    display: flex; gap: 1rem; align-items: flex-start;
+  }
+  .why-num {
+    width: 36px; height: 36px; flex-shrink: 0;
+    background: var(--accent); color: #fff;
+    border-radius: 10px; font-weight: 700; font-size: 0.85rem;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .why-item h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.3rem; }
+  .why-item p { color: var(--mid); font-size: 0.85rem; line-height: 1.55; }
+
+  /* ── ÜBER UNS ── */
+  .about { background: var(--slate); }
+  .about-inner {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 5rem; align-items: center; max-width: 1100px; margin: 0 auto;
+  }
+  .about-image-wrap {
+    background: linear-gradient(135deg, #1B6FE8 0%, #0F4DAB 100%);
+    border-radius: 20px;
+    aspect-ratio: 4/3;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 5rem;
+    box-shadow: var(--shadow-md);
+    position: relative; overflow: hidden;
+  }
+  .about-image-wrap::after {
+    content: '';
+    position: absolute; bottom: -20px; right: -20px;
+    width: 150px; height: 150px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50%;
+  }
+  .about-text p { color: var(--mid); line-height: 1.75; margin-bottom: 1rem; }
+  .about-text p:first-of-type { font-size: 1.05rem; }
+  .check-list { list-style: none; margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; }
+  .check-list li {
+    display: flex; align-items: center; gap: 0.75rem;
+    font-size: 0.9rem; color: var(--ink);
+  }
+  .check-list li::before {
+    content: '✓';
+    width: 22px; height: 22px; flex-shrink: 0;
+    background: #E8F5F0; color: var(--green);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 0.75rem; font-weight: 700;
+  }
+
+  /* ── KONTAKT ── */
+  .kontakt { background: var(--white); }
+  .kontakt-inner {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 4rem; align-items: start; max-width: 1000px; margin: 0 auto;
+  }
+  .kontakt-info h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem; }
+  .kontakt-item {
+    display: flex; gap: 1rem; align-items: flex-start;
+    margin-bottom: 1.25rem;
+  }
+  .kontakt-item .k-icon {
+    width: 44px; height: 44px; flex-shrink: 0;
+    background: var(--snow); border: 1px solid var(--border);
+    border-radius: 12px; display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem;
+  }
+  .kontakt-item strong { font-size: 0.8rem; color: var(--mid); text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 0.2rem; }
+  .kontakt-item a, .kontakt-item span { color: var(--ink); font-weight: 500; text-decoration: none; font-size: 0.95rem; }
+  .kontakt-item a:hover { color: var(--accent); }
+  .wa-big {
+    display: flex; align-items: center; gap: 0.75rem;
+    background: #25D366; color: #fff;
+    font-weight: 700; font-size: 1rem;
+    padding: 1.1rem 1.75rem; border-radius: var(--radius);
+    text-decoration: none; margin-top: 1.5rem;
+    transition: background .2s, transform .2s;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.3);
+  }
+  .wa-big:hover { background: #1ebe5a; transform: translateY(-2px); }
+
+  /* FORM */
+  .form-wrap {
+    background: var(--snow);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2.25rem;
+  }
+  .form-wrap h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 1.5rem; }
+  .form-group { margin-bottom: 1rem; }
+  .form-group label { display: block; font-size: 0.8rem; font-weight: 600; color: var(--mid); margin-bottom: 0.35rem; text-transform: uppercase; letter-spacing: 0.04em; }
+  .form-group input, .form-group select, .form-group textarea {
+    width: 100%;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem; font-family: inherit; color: var(--ink);
+    transition: border-color .2s, box-shadow .2s;
+    appearance: none;
+  }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    outline: none; border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(27,111,232,0.12);
+  }
+  .form-group textarea { resize: vertical; min-height: 100px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .btn-send {
+    width: 100%; background: var(--accent); color: #fff;
+    font-weight: 700; font-size: 0.95rem;
+    padding: 0.9rem; border-radius: 10px;
+    border: none; cursor: pointer; margin-top: 0.5rem;
+    transition: background .2s, transform .2s;
+    font-family: inherit;
+  }
+  .btn-send:hover { background: var(--accent2); transform: translateY(-1px); }
+  .form-note { font-size: 0.75rem; color: var(--mid); margin-top: 0.75rem; text-align: center; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--ink);
+    color: rgba(255,255,255,0.55);
+    padding: 2.5rem 5%;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 1rem;
+    font-size: 0.82rem;
+  }
+  footer strong { color: #fff; }
+  footer a { color: rgba(255,255,255,0.55); text-decoration: none; transition: color .2s; }
+  footer a:hover { color: #fff; }
+  footer .footer-links { display: flex; gap: 1.5rem; }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes pulse-ring {
+    0%   { transform: scale(1); opacity: 0.6; }
+    100% { transform: scale(1.7); opacity: 0; }
+  }
+  @keyframes floatBob {
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(-8px); }
+  }
+  .animate { opacity: 0; }
+  .animate.visible { animation: fadeUp 0.65s cubic-bezier(.22,1,.36,1) forwards; }
+  .animate-d1.visible { animation-delay: 0.1s; }
+  .animate-d2.visible { animation-delay: 0.2s; }
+  .animate-d3.visible { animation-delay: 0.3s; }
+  .animate-d4.visible { animation-delay: 0.4s; }
+  .animate-d5.visible { animation-delay: 0.5s; }
+  .animate-d6.visible { animation-delay: 0.6s; }
+  .animate-d7.visible { animation-delay: 0.7s; }
+
+  .hero-content { animation: fadeUp 0.9s cubic-bezier(.22,1,.36,1) both; }
+  .about-image-wrap { animation: floatBob 4s ease-in-out infinite; }
+
+  /* ── FLOATING WHATSAPP ── */
+  .wa-float {
+    position: fixed; bottom: 28px; right: 28px; z-index: 999;
+    display: flex; flex-direction: column; align-items: flex-end; gap: 10px;
+  }
+  .wa-float-tooltip {
+    background: var(--ink); color: #fff;
+    font-size: 0.78rem; font-weight: 600;
+    padding: 0.45rem 0.9rem; border-radius: 8px;
+    white-space: nowrap; opacity: 0; transform: translateX(10px);
+    transition: opacity .3s, transform .3s; pointer-events: none;
+  }
+  .wa-float:hover .wa-float-tooltip { opacity: 1; transform: translateX(0); }
+  .wa-float-btn {
+    width: 62px; height: 62px; background: #25D366; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.5); text-decoration: none;
+    position: relative; transition: transform .25s, box-shadow .25s;
+  }
+  .wa-float-btn:hover { transform: scale(1.1); box-shadow: 0 8px 32px rgba(37,211,102,0.6); }
+  .wa-float-btn::before {
+    content: ''; position: absolute; inset: 0; border-radius: 50%;
+    background: #25D366; animation: pulse-ring 2s ease-out infinite;
+  }
+  .wa-float-btn svg { position: relative; z-index: 1; }
+
+  /* ── MAP ── */
+  .map-section { background: var(--snow); padding: 5rem 5%; }
+  .map-header {
+    display: flex; align-items: flex-end; justify-content: space-between;
+    flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem;
+  }
+  .map-badge {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: var(--accent); color: #fff;
+    font-size: 0.8rem; font-weight: 600;
+    padding: 0.4rem 1rem; border-radius: 100px;
+  }
+  .map-wrap {
+    border-radius: 20px; overflow: hidden;
+    box-shadow: var(--shadow-md); border: 1px solid var(--border);
+    height: 420px;
+  }
+  .map-wrap iframe { width: 100%; height: 100%; border: none; display: block; }
+
+  /* ── REVIEWS ── */
+  .reviews { background: var(--white); padding: 6rem 5%; }
+  .reviews-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.25rem;
+  }
+  .review-card {
+    background: var(--snow); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 1.75rem;
+    transition: box-shadow .25s, transform .25s;
+  }
+  .review-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
+  .review-stars { color: #F5A623; font-size: 1.05rem; letter-spacing: 2px; margin-bottom: 0.75rem; }
+  .review-text {
+    color: var(--mid); font-size: 0.875rem; line-height: 1.65;
+    margin-bottom: 1rem; font-style: italic;
+  }
+  .review-author { display: flex; align-items: center; gap: 0.75rem; }
+  .review-avatar {
+    width: 38px; height: 38px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    color: #fff; font-weight: 700; font-size: 0.85rem;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .review-name { font-weight: 700; font-size: 0.875rem; }
+  .review-meta { font-size: 0.75rem; color: var(--mid); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    nav ul { display: none; }
+    .why-grid { grid-template-columns: 1fr; }
+    .about-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    .kontakt-inner { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .hero-stats { gap: 1.5rem; }
+    section { padding: 4rem 5%; }
+    .map-wrap { height: 280px; }
+    .wa-float { bottom: 20px; right: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">S<span>&</span>M Service NRW</div>
+  <ul>
+    <li><a href="#leistungen">Leistungen</a></li>
+    <li><a href="#ueber-uns">Über uns</a></li>
+    <li><a href="#kontakt" class="nav-cta">Anfrage senden</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">Düsseldorf &amp; Umgebung</div>
+    <h1>Sauberkeit, auf die Sie sich <em>verlassen</em> können.</h1>
+    <p>S&M Service NRW reinigt Ihr Büro, Ihre Wohnung und Ihr Treppenhaus – pünktlich, gründlich und zu fairen Preisen.</p>
+    <div class="hero-buttons">
+      <a href="#kontakt" class="btn-primary">
+        ✉ Kostenlos anfragen
+      </a>
+      <a href="https://wa.me/49XXXXXXXXXX?text=Hallo%2C%20ich%20möchte%20ein%20Angebot%20für%20eine%20Reinigung%20anfragen." class="btn-whatsapp">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.09.534 4.055 1.475 5.765L0 24l6.395-1.44A11.938 11.938 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.884 0-3.645-.52-5.147-1.424l-.37-.22-3.797.995.994-3.688-.24-.382A9.944 9.944 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
+        WhatsApp
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><strong>5+</strong><small>Jahre Erfahrung</small></div>
+      <div class="stat"><strong>200+</strong><small>Zufriedene Kunden</small></div>
+      <div class="stat"><strong>100%</strong><small>Qualitätsgarantie</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trustbar">
+  <div class="trust-item"><span class="icon">🛡</span> Versichert &amp; zuverlässig</div>
+  <div class="trust-item"><span class="icon">🌿</span> Umweltfreundliche Mittel</div>
+  <div class="trust-item"><span class="icon">📅</span> Flexible Termine</div>
+  <div class="trust-item"><span class="icon">💬</span> Antwort innerhalb 2 Stunden</div>
+  <div class="trust-item"><span class="icon">⭐</span> 4,9 / 5 Kundenbewertung</div>
+</div>
+
+<!-- LEISTUNGEN -->
+<section class="services" id="leistungen">
+  <div class="section-head">
+    <span class="section-label">Unsere Leistungen</span>
+    <h2 class="section-title">Was wir für Sie reinigen</h2>
+    <p class="section-sub">Von der regelmäßigen Unterhaltsreinigung bis zur Grundreinigung – wir übernehmen alles, damit Sie sich auf das Wesentliche konzentrieren können.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">🏢</div>
+      <h3>Büroreinigung</h3>
+      <p>Saubere Arbeitsräume für ein produktives Team. Wir reinigen Büros, Meetingräume und Gemeinschaftsflächen – täglich, wöchentlich oder nach Bedarf.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🏠</div>
+      <h3>Wohnungsreinigung</h3>
+      <p>Ihr Zuhause in besten Händen. Gründliche Reinigung aller Räume, Böden, Oberflächen und Sanitäranlagen – damit Sie nach Hause kommen und entspannen.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🪜</div>
+      <h3>Treppenhausreinigung</h3>
+      <p>Gepflegte Eingangsbereiche und Treppenhäuser für Wohn- und Geschäftsgebäude. Wir sorgen für einen sauberen ersten Eindruck bei Mietern und Besuchern.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🪟</div>
+      <h3>Fensterreinigung</h3>
+      <p>Streifenfreie Fenster von innen und außen. Für Privathaushalte, Büros und Gewerbeimmobilien – schnell, sicher und professionell.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">✨</div>
+      <h3>Grundreinigung</h3>
+      <p>Intensive Tiefenreinigung für Bereiche, die besondere Aufmerksamkeit brauchen. Ideal nach Renovierungen, für Saisonstarts oder vernachlässigte Flächen.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">📦</div>
+      <h3>Reinigung nach Umzug</h3>
+      <p>Stressfreier Start im neuen Zuhause. Wir reinigen Ihre alte oder neue Wohnung besenrein – damit Sie die Kaution zurückbekommen oder entspannt einziehen.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🔄</div>
+      <h3>Unterhaltsreinigung</h3>
+      <p>Regelmäßige Pflege für ein dauerhaft sauberes Objekt. Wir erstellen für Sie einen festen Reinigungsplan – verlässlich, pünktlich und transparent kalkuliert.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why">
+  <div class="section-head">
+    <span class="section-label">Warum S&amp;M Service NRW</span>
+    <h2 class="section-title">Ihr Vorteil bei uns</h2>
+  </div>
+  <div class="why-grid">
+    <div class="why-item">
+      <div class="why-num">1</div>
+      <div>
+        <h4>Kostenloser Vor-Ort-Termin</h4>
+        <p>Wir besichtigen Ihr Objekt, besprechen Ihre Wünsche und erstellen ein individuelles Angebot – ohne versteckte Kosten.</p>
+      </div>
+    </div>
+    <div class="why-item">
+      <div class="why-num">2</div>
+      <div>
+        <h4>Erfahrenes, geprüftes Team</h4>
+        <p>Alle Mitarbeiter sind geschult, zuverlässig und versichert. Wir stehen für Qualität, die man sieht und spürt.</p>
+      </div>
+    </div>
+    <div class="why-item">
+      <div class="why-num">3</div>
+      <div>
+        <h4>Flexible Terminplanung</h4>
+        <p>Früh, spät, am Wochenende – wir passen uns Ihrem Zeitplan an, nicht umgekehrt.</p>
+      </div>
+    </div>
+    <div class="why-item">
+      <div class="why-num">4</div>
+      <div>
+        <h4>Umweltschonende Reinigungsmittel</h4>
+        <p>Wir setzen auf biologisch abbaubare Produkte, die Menschen, Tieren und der Umwelt nicht schaden.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ÜBER UNS -->
+<section class="about" id="ueber-uns">
+  <div class="about-inner">
+    <div class="about-image-wrap">🧹</div>
+    <div class="about-text">
+      <span class="section-label">Über uns</span>
+      <h2 class="section-title">Sauberkeit ist unser Handwerk</h2>
+      <p>S&M Service NRW ist ein familiengeführtes Reinigungsunternehmen mit Sitz in Düsseldorf. Seit mehreren Jahren betreuen wir Privatkunden, Unternehmen und Hausverwaltungen im gesamten Rheinland.</p>
+      <p>Unsere Stärke liegt in der persönlichen Betreuung: Für jeden Kunden entwickeln wir ein individuelles Reinigungskonzept, das zu den Bedürfnissen des Objekts und des Budgets passt.</p>
+      <ul class="check-list">
+        <li>Lokales Unternehmen aus Düsseldorf – kein Franchisesystem</li>
+        <li>Feste Ansprechpartner – kein wechselndes Personal</li>
+        <li>Qualitätskontrolle nach jedem Einsatz</li>
+        <li>Faire, transparente Preise ohne Überraschungen</li>
+        <li>Schnelle Reaktionszeiten auch bei kurzfristigen Anfragen</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- KONTAKT -->
+<section class="kontakt" id="kontakt">
+  <div class="section-head" style="text-align:center; margin-left:auto; margin-right:auto; max-width:600px;">
+    <span class="section-label">Kontakt</span>
+    <h2 class="section-title">Jetzt kostenlos anfragen</h2>
+    <p class="section-sub" style="margin:0 auto;">Schreiben Sie uns – wir melden uns innerhalb von 2 Stunden und erstellen Ihnen ein unverbindliches Angebot.</p>
+  </div>
+  <div class="kontakt-inner">
+    <div class="kontakt-info">
+      <h3>So erreichen Sie uns</h3>
+      <div class="kontakt-item">
+        <div class="k-icon">📞</div>
+        <div>
+          <strong>Telefon</strong>
+          <a href="tel:+4915774124697">015774 124697</a>
+        </div>
+      </div>
+      <div class="kontakt-item">
+        <div class="k-icon">✉️</div>
+        <div>
+          <strong>E-Mail</strong>
+          <a href="mailto:smserviceduesseldorf@gmail.com">smserviceduesseldorf@gmail.com</a>
+        </div>
+      </div>
+      <div class="kontakt-item">
+        <div class="k-icon">📍</div>
+        <div>
+          <strong>Servicegebiet</strong>
+          <span>Düsseldorf und Umgebung (NRW)</span>
+        </div>
+      </div>
+      <div class="kontakt-item">
+        <div class="k-icon">🕐</div>
+        <div>
+          <strong>Erreichbarkeit</strong>
+          <span>Mo–Sa, 8:00–19:00 Uhr</span>
+        </div>
+      </div>
+      <a href="https://wa.me/49XXXXXXXXXX?text=Hallo%20S%26M%20Service%20NRW%2C%20ich%20möchte%20ein%20Angebot%20für%20eine%20Reinigung%20anfragen.%20Könnten%20Sie%20mir%20bitte%20weiterhelfen%3F" class="wa-big">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.09.534 4.055 1.475 5.765L0 24l6.395-1.44A11.938 11.938 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.884 0-3.645-.52-5.147-1.424l-.37-.22-3.797.995.994-3.688-.24-.382A9.944 9.944 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
+        Nachricht auf WhatsApp schreiben
+      </a>
+    </div>
+
+    <div class="form-wrap">
+      <h3>Angebotsanfrage</h3>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Vorname</label>
+          <input type="text" placeholder="Max">
+        </div>
+        <div class="form-group">
+          <label>Nachname</label>
+          <input type="text" placeholder="Mustermann">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Telefon oder E-Mail</label>
+        <input type="text" placeholder="+49 oder name@email.de">
+      </div>
+      <div class="form-group">
+        <label>Gewünschte Leistung</label>
+        <select>
+          <option value="">Bitte auswählen …</option>
+          <option>Büroreinigung</option>
+          <option>Wohnungsreinigung</option>
+          <option>Treppenhausreinigung</option>
+          <option>Fensterreinigung</option>
+          <option>Grundreinigung</option>
+          <option>Reinigung nach Umzug</option>
+          <option>Unterhaltsreinigung</option>
+          <option>Sonstiges</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Ihre Nachricht (optional)</label>
+        <textarea placeholder="Kurze Beschreibung Ihres Objekts oder Ihrer Wünsche …"></textarea>
+      </div>
+      <button class="btn-send">Anfrage absenden →</button>
+      <p class="form-note">🔒 Ihre Daten werden vertraulich behandelt. Kein Spam, keine Weitergabe an Dritte.</p>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews" id="bewertungen">
+  <div class="section-head animate">
+    <span class="section-label">Kundenbewertungen</span>
+    <h2 class="section-title">Was unsere Kunden sagen</h2>
+    <p class="section-sub">Echte Meinungen von zufriedenen Kunden aus Düsseldorf und Umgebung.</p>
+  </div>
+  <div class="reviews-grid">
+    <div class="review-card animate animate-d1">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">„Sehr professionell und pünktlich! Die Wohnung war nach der Grundreinigung wie neu. Ich bin absolut begeistert und werde S&M Service NRW definitiv weiterempfehlen."</p>
+      <div class="review-author">
+        <div class="review-avatar">MK</div>
+        <div><div class="review-name">Maria K.</div><div class="review-meta">Düsseldorf-Oberkassel · Google</div></div>
+      </div>
+    </div>
+    <div class="review-card animate animate-d2">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">„Unser Büro wird seit 6 Monaten regelmäßig gereinigt. Immer zuverlässig, diskret und gründlich. Das Team ist sehr freundlich und arbeitet schnell."</p>
+      <div class="review-author">
+        <div class="review-avatar">TH</div>
+        <div><div class="review-name">Thomas H.</div><div class="review-meta">Düsseldorf-Stadtmitte · Google</div></div>
+      </div>
+    </div>
+    <div class="review-card animate animate-d3">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">„Reinigung nach Umzug war top! Alles blitzsauber, die Kaution haben wir komplett zurückbekommen. Preis-Leistung ist unschlagbar. Absolute Empfehlung!"</p>
+      <div class="review-author">
+        <div class="review-avatar">AS</div>
+        <div><div class="review-name">Anna S.</div><div class="review-meta">Meerbusch · Google</div></div>
+      </div>
+    </div>
+    <div class="review-card animate animate-d4">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">„Fensterreinigung im 3. Stock – kein Problem für das Team! Schnell, sicher und streifenfrei. Sehr zufrieden, werde wieder buchen."</p>
+      <div class="review-author">
+        <div class="review-avatar">RB</div>
+        <div><div class="review-name">Ralf B.</div><div class="review-meta">Düsseldorf-Gerresheim · Google</div></div>
+      </div>
+    </div>
+    <div class="review-card animate animate-d5">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">„Das Treppenhaus in unserem Haus sieht jetzt aus wie am ersten Tag. Schnelle Kommunikation über WhatsApp, faire Preise. Sehr empfehlenswert!"</p>
+      <div class="review-author">
+        <div class="review-avatar">LP</div>
+        <div><div class="review-name">Laura P.</div><div class="review-meta">Ratingen · Google</div></div>
+      </div>
+    </div>
+    <div class="review-card animate animate-d6">
+      <div class="review-stars">★★★★☆</div>
+      <p class="review-text">„Sehr gute Arbeit, pünktlich und freundlich. Kleine Details wurden auf Wunsch sofort nachgebessert. Insgesamt sehr zufrieden – kommt gerne wieder!"</p>
+      <div class="review-author">
+        <div class="review-avatar">GW</div>
+        <div><div class="review-name">Günter W.</div><div class="review-meta">Düsseldorf-Bilk · Google</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KARTE -->
+<section class="map-section" id="karte">
+  <div class="map-header animate">
+    <div>
+      <span class="section-label">Unser Einsatzgebiet</span>
+      <h2 class="section-title">Düsseldorf &amp; Umgebung</h2>
+    </div>
+    <span class="map-badge">📍 Wir kommen zu Ihnen</span>
+  </div>
+  <div class="map-wrap animate animate-d1">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d155972.77!2d6.7734!3d51.2217!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b8c8e7e62d4e67%3A0x526dff5f4d43fdc5!2sDüsseldorf!5e0!3m2!1sde!2sde!4v1"
+      allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+  <p style="margin-top:1.25rem; color:var(--mid); font-size:0.875rem;">
+    🚗 Wir sind in ganz Düsseldorf und Umgebung im Einsatz: Meerbusch, Ratingen, Neuss, Erkrath, Hilden, Langenfeld und weitere Städte im Kreis Mettmann.
+  </p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <strong>S&M Service NRW</strong> – Professionelle Gebäudereinigung in Düsseldorf<br>
+    © 2025 S&M Service NRW. Alle Rechte vorbehalten.
+  </div>
+  <div class="footer-links">
+    <a href="#">Impressum</a>
+    <a href="#">Datenschutz</a>
+    <a href="#kontakt">Kontakt</a>
+  </div>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<div class="wa-float">
+  <div class="wa-float-tooltip">Jetzt auf WhatsApp schreiben ✉</div>
+  <a class="wa-float-btn" href="https://wa.me/4915774124697?text=Hallo%20S%26M%20Service%20NRW%2C%20ich%20möchte%20ein%20Angebot%20für%20eine%20Reinigung%20anfragen." target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg width="30" height="30" viewBox="0 0 24 24" fill="#fff">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+      <path d="M12 0C5.373 0 0 5.373 0 12c0 2.09.534 4.055 1.475 5.765L0 24l6.395-1.44A11.938 11.938 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.884 0-3.645-.52-5.147-1.424l-.37-.22-3.797.995.994-3.688-.24-.382A9.944 9.944 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/>
+    </svg>
+  </a>
+</div>
+
+<script>
+  // Scroll-triggered animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(el => {
+      if (el.isIntersecting) {
+        el.target.classList.add('visible');
+        observer.unobserve(el.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.animate').forEach(el => observer.observe(el));
+
+  // Add animate class to service & review cards
+  document.querySelectorAll('.service-card, .why-item').forEach((el, i) => {
+    el.classList.add('animate');
+    el.style.animationDelay = (i * 0.08) + 's';
+    observer.observe(el);
+  });
+
+  // Nav active highlight on scroll
+  const sections = document.querySelectorAll('section[id], .map-section[id]');
+  const navLinks = document.querySelectorAll('nav ul a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 100) current = s.getAttribute('id');
+    });
+    navLinks.forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + current ? 'var(--accent)' : '';
+    });
+  }, { passive: true });
+
+  // Counter animation for hero stats
+  function animateCount(el, target, suffix = '') {
+    let start = 0;
+    const step = target / 40;
+    const timer = setInterval(() => {
+      start += step;
+      if (start >= target) { el.textContent = target + suffix; clearInterval(timer); return; }
+      el.textContent = Math.floor(start) + suffix;
+    }, 35);
+  }
+  const statsObserver = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        animateCount(document.querySelectorAll('.stat strong')[0], 5, '+');
+        animateCount(document.querySelectorAll('.stat strong')[1], 200, '+');
+        animateCount(document.querySelectorAll('.stat strong')[2], 100, '%');
+        statsObserver.disconnect();
+      }
+    });
+  }, { threshold: 0.5 });
+  const statsEl = document.querySelector('.hero-stats');
+  if (statsEl) statsObserver.observe(statsEl);
+</script>
+
+</body>
+</html>
